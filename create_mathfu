@@ -1,0 +1,17 @@
+wget https://github.com/google/mathfu/archive/master.zip -O mathfu.zip
+SHASUM256=$(shasum -a 256 mathfu.zip | awk '{print $1}')
+
+printf "coordinate:\r\n" >> cdep-manifest.yml
+printf "  groupId: com.github.jomof\r\n" >> cdep-manifest.yml
+printf "  artifactId: mathfu\r\n" >> cdep-manifest.yml
+printf "  version: ${TRAVIS_TAG}\r\n" >> cdep-manifest.yml
+printf "android:\r\n" >> cdep-manifest.yml
+printf "  - file: mathfu.zip\r\n" >> cdep-manifest.yml
+printf "    sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
+printf "linux:\r\n" >> cdep-manifest.yml
+printf "  - file: mathfu.zip\r\n" >> cdep-manifest.yml
+printf "    sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
+cat cdep-manifest.yml
+

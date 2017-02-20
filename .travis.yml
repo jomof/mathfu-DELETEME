@@ -1,0 +1,14 @@
+language: script
+script:
+- chmod +x create_mathfu
+- "./create_mathfu"
+deploy:
+  api_key:
+    secure: TiRLDn1cRTAN6A+qeqWGFw8gaBceJPihQkyEDw1+XcshJxKkOotGGjfXAvooFplVnLOvwg0i/fFIrWXAHzaUi3txgMEM5cpvrC12/jtf+Nl7viSfptrFh7uGGToOrk9GJgdKb7gKwVcmWAow5tvN8D9a8RcVpIe6oSdaVJ4L6LiKPDWyUOhtgXzyh05WXnf2UuBJiT4RotPAlM7wWdfSmsQyw5zCUhYemkGTvSpBPS42kabJhh16UGKFroj+FzDvD6al30atUGeMCSLXEfMgRaGPULUTMYeSUTeZi/TnEuMkY+bdkusvHJCRatZi97YBfTZSZIzC/o0NbrFhAA6V1cbZ5bFybA+onjaJhUrbpY1fXllkP8zuL7U9QhSZKg7zMl3lpg4omVeMBM6FQ1Lsuscq7nzjseNIjKWoUz1HZLNVUTrzPBMwoY8YfOq8hkC6B2/wRWu8TGTadoNL8HPz9t01GJqo1q5fFCGZU9GeLkJfVUR65VN1WovRsDoRHQlMOqrVHdN0tErLOcFipG1QpNaVWn027Yy1DNn/mYktuWlIsDaTxSz2Lbq2ZNsFgMWQcX+EpXQUrXsnI+xj9W0xF8Gh8c+RTY7G+VZ8W9JkVvjpLriwwX8cNRbv1pDJxZ84ldfIH7KUbXhIZ8y3l9GCQmOYegSfj3DOZp9I/oGfI2A=
+  file:
+  - mathfu.zip
+  - cdep-manifest.yml
+  provider: releases
+  skip_cleanup: true
+  on:
+    tags: true
