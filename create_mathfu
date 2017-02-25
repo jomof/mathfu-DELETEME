@@ -1,20 +1,25 @@
 wget https://github.com/google/mathfu/archive/master.zip -O mathfu.zip
 SHASUM256=$(shasum -a 256 mathfu.zip | awk '{print $1}')
+ARCHIVESIZE=$(stat --printf="%s" mathfu.zip)
 
 printf "coordinate:\r\n" >> cdep-manifest.yml
 printf "  groupId: com.github.jomof\r\n" >> cdep-manifest.yml
 printf "  artifactId: mathfu\r\n" >> cdep-manifest.yml
 printf "  version: ${TRAVIS_TAG}\r\n" >> cdep-manifest.yml
 printf "dependencies:\r\n" >> cdep-manifest.yml
-printf "  - compile: com.github.jomof:vectorial:0.0.0-rev3\r\n" >> cdep-manifest.yml
-printf "    sha256: e03e57792b241bd1274739816aab9618f315a684ea8a3968f63e588cd687ee3e\r\n" >> cdep-manifest.yml
+printf "  - compile: com.github.jomof:vectorial:0.0.0-rev5\r\n" >> cdep-manifest.yml
+printf "    sha256: b1f62d0a2fb5d59becd3da3824c5e47e69b47454a01252536b1b15399d09cbd8\r\n" >> cdep-manifest.yml
 printf "android:\r\n" >> cdep-manifest.yml
-printf "  - file: mathfu.zip\r\n" >> cdep-manifest.yml
-printf "    sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "  archives:\r\n" >> cdep-manifest.yml
+printf "    - file: mathfu.zip\r\n" >> cdep-manifest.yml
+printf "      sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "      size: $ARCHIVESIZE\r\n" >> cdep-manifest.yml
 printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
 printf "linux:\r\n" >> cdep-manifest.yml
-printf "  - file: mathfu.zip\r\n" >> cdep-manifest.yml
-printf "    sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "  archives:\r\n" >> cdep-manifest.yml
+printf "    - file: mathfu.zip\r\n" >> cdep-manifest.yml
+printf "      sha256: $SHASUM256\r\n" >> cdep-manifest.yml
+printf "      size: $ARCHIVESIZE\r\n" >> cdep-manifest.yml
 printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
 cat cdep-manifest.yml
 
