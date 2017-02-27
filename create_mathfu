@@ -10,17 +10,11 @@ printf "dependencies:\r\n" >> cdep-manifest.yml
 printf "  - compile: com.github.jomof:vectorial:0.0.0-rev9\r\n" >> cdep-manifest.yml
 printf "    sha256: 8a4c91444b77b760735a6bf4c53778bff4d5e277e0b24e775c086e0de59ff069\r\n" >> cdep-manifest.yml
 printf "android:\r\n" >> cdep-manifest.yml
-printf "  - archives:\r\n" >> cdep-manifest.yml
+printf "  archives:\r\n" >> cdep-manifest.yml
 printf "    - file: mathfu.zip\r\n" >> cdep-manifest.yml
 printf "      sha256: $SHASUM256\r\n" >> cdep-manifest.yml
 printf "      size: $ARCHIVESIZE\r\n" >> cdep-manifest.yml
-printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
-printf "linux:\r\n" >> cdep-manifest.yml
-printf "  - archives:\r\n" >> cdep-manifest.yml
-printf "    - file: mathfu.zip\r\n" >> cdep-manifest.yml
-printf "      sha256: $SHASUM256\r\n" >> cdep-manifest.yml
-printf "      size: $ARCHIVESIZE\r\n" >> cdep-manifest.yml
-printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
+printf "      include: mathfu-master/include\r\n" >> cdep-manifest.yml
 printf "example: |\r\n" >> cdep-manifest.yml
 printf "  #include <mathfu/glsl_mappings.h>\r\n" >> cdep-manifest.yml
 printf "  void test() {\r\n" >> cdep-manifest.yml
