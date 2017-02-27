@@ -21,5 +21,12 @@ printf "    - file: mathfu.zip\r\n" >> cdep-manifest.yml
 printf "      sha256: $SHASUM256\r\n" >> cdep-manifest.yml
 printf "      size: $ARCHIVESIZE\r\n" >> cdep-manifest.yml
 printf "    include: mathfu-master/include\r\n" >> cdep-manifest.yml
+printf "example: |\r\n" >> cdep-manifest.yml
+printf "  #include <mathfu/glsl_mappings.h>\r\n" >> cdep-manifest.yml
+printf "  void test() {\r\n" >> cdep-manifest.yml
+printf "     const mathfu::vec4 v(1.0f, 2.0f, 3.0f, 4.0f);\r\n"  >> cdep-manifest.yml
+printf "     matrix<double> m (3, 3);\r\n" >> cdep-manifest.yml
+printf "     mathfu::vec4 v2 = v + v;{\r\n" >> cdep-manifest.yml
+printf "  }\r\n" >> cdep-manifest.yml
 cat cdep-manifest.yml
 
