@@ -1,6 +1,10 @@
 wget https://github.com/google/mathfu/archive/master.zip -O mathfu.zip
 SHASUM256=$(shasum -a 256 mathfu.zip | awk '{print $1}')
 ARCHIVESIZE=$(stat --printf="%s" mathfu.zip)
+if [ -z "$ARCHIVESIZE" ]; then
+    # For MacOS
+    ARCHIVESIZE=$(stat -f%z vectorial.zip)
+fi
 
 printf "coordinate:\r\n" >> cdep-manifest.yml
 printf "  groupId: com.github.jomof\r\n" >> cdep-manifest.yml
