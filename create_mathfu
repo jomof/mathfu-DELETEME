@@ -7,7 +7,7 @@ printf "  groupId: com.github.jomof\r\n" >> cdep-manifest.yml
 printf "  artifactId: mathfu\r\n" >> cdep-manifest.yml
 printf "  version: ${TRAVIS_TAG:-0.0.0}\r\n" >> cdep-manifest.yml
 printf "dependencies:\r\n" >> cdep-manifest.yml
-printf "  - compile: com.github.jomof:vectorial:0.0.0-rev11\r\n" >> cdep-manifest.yml
+printf "  - compile: com.github.jomof:vectorial:0.0.0-rev13\r\n" >> cdep-manifest.yml
 printf "    sha256: 64a816c7bade96f2e8dff7f469720d98347a35d6766a2e61414793e37619aaf3\r\n" >> cdep-manifest.yml
 printf "archive:\r\n" >> cdep-manifest.yml
 printf "  file: mathfu.zip\r\n" >> cdep-manifest.yml
